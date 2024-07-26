@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar  pagesize={5} country='in' category='science'/>
         <News/>
       </div>
     )
