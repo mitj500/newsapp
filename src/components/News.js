@@ -24,17 +24,22 @@ export class News extends Component {
         }
     }
 
+
     async componentDidMount(){ 
-        let url = "https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}dbe57b028aeb41e285a226a94865f7a7&page=1pageSize=20";
+        let url = "https://newsapi.org/v2/top-headlines?country=in&category=" + this.props.category + "&apiKey=1a5fa164f12d4375a3d64fbc7ce952f7&page=1&pageSize=20";
         let data = await fetch(url);
         let parsedData = await data.json()
-        console.log(parsedData); 
         
-        this.setState({
-              articles: parsedData.articles, 
-              totalResults: parsedData.totalResults})
+        if (parsedData && parsedData.articles) {
+            console.log(parsedData); 
+            this.setState({
+                articles: parsedData.articles, 
+                totalResults: parsedData.totalResults
+            });
+        } else {
+            console.error("Failed to fetch articles");
+        }
     }
-
      handlePrevClick = async ()=>{
         console.log("Previous");
         let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page - 1}&pageSize=20`;
