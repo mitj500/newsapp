@@ -39,7 +39,7 @@ export class News extends Component {
         } else {
             console.error("Failed to fetch articles");
         }
-    }
+    } 
      handlePrevClick = async ()=>{
         console.log("Previous");
         let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page - 1}&pageSize=20`;
@@ -50,7 +50,7 @@ export class News extends Component {
             page: this.state.page - 1,
             articles: parsedData.articles
         })
-
+ 
     }
     
      handleNextClick = async ()=>{

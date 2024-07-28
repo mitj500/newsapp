@@ -11,14 +11,14 @@ export default class App extends Component {
         <Navbar  />
         
         <Routes>
-          <Route path="/"><News pagesize={5} country='in' category='home'/></Route>
-          <Route path="/business"><News pagesize={5} country='in' category='business'/></Route>
-          <Route path="/entertainment"><News pagesize={5} country='in' category='entertainment'/></Route>
-          <Route path="/general"><News pagesize={5} country='in' category='general'/></Route>
-          <Route path="/health"><News pagesize={5} country='in' category='health'/></Route>
-          <Route path="/science"><News pagesize={5} country='in' category='science'/></Route>
-          <Route path="/sports"><News pagesize={5} country='in' category='sports'/></Route>
-          <Route path="/technology"><News pagesize={5} country='in' category='technology'/></Route>
+          <Route exact path="/"><News  key="home"pagesize={5} country='in' category='home'/></Route>
+          <Route exact path="/business"><News key="business" pagesize={5} country='in' category='business'/></Route>
+          <Route exact path="/entertainment"><News  key="entertainment"pagesize={5} country='in' category='entertainment'/></Route>
+          <Route exact path="/general"><News  key="general"pagesize={5} country='in' category='general'/></Route>
+          <Route exact path="/health"><News  key="health"pagesize={5} country='in' category='health'/></Route>
+          <Route exact path="/science"><News key="science" pagesize={5} country='in' category='science'/></Route>
+          <Route exact path="/sports"><News  key="sports"pagesize={5} country='in' category='sports'/></Route>
+          <Route exact path="/technology"><News  key="technology"pagesize={5} country='in' category='technology'/></Route>
           
         </Routes>
         </Router>
