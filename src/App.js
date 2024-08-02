@@ -1,20 +1,20 @@
 import './App.css';
 
-import React, { Component } from 'react';
-import NavBar from '../components/NavBar';
+import React, { Component } from 'react'
+import NavBar from './components/NavBar';
 import News from './components/News';
 import {
   BrowserRouter as Router,
-  Routes,
   Route,
+  Routes,
 } from "react-router-dom";
 
 export default class App extends Component {
-  pageSize =5;
+  pageSize = 7  ;
   render() {
     return (
       <div>
-        <Router>
+           <Router>
           <NavBar/> 
           <Routes>
             <Route exact path="/" element={<News key="general" pageSize={this.pageSize} country="in" category="general"/>} />
@@ -28,6 +28,6 @@ export default class App extends Component {
           </Routes>
         </Router>
       </div>
-    );
+    )
   }
 }
